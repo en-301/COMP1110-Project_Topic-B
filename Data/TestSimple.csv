@@ -1,0 +1,21 @@
+UNDIRECTED
+Dorm,Campus,8,0,0.6,Walk
+Dorm,Mong Kok,15,5.5,0.4,Bus
+Dorm,Sham Shui Po,12,0,0.5,Walk
+Campus,Kowloon Tong,10,0,0.6,Walk
+Campus,Sha Tin,20,5.5,0.5,Bus
+Campus,Tai Po,28,7,0.5,Bus
+Sham Shui Po,Mong Kok,6,0,0.5,Walk
+Mong Kok,Kowloon Tong,8,5,0.7,MTR
+Mong Kok,Tsim Sha Tsui,7,4.8,0.7,MTR
+Mong Kok,Causeway Bay,20,8.5,0.4,Bus
+Kowloon Tong,Sha Tin,14,6.5,0.7,MTR
+Kowloon Tong,Sai Kung,25,8,0.5,Bus
+Sha Tin,Tai Po,11,5.5,0.7,MTR
+Sha Tin,Sai Kung,24,8.5,0.5,Bus
+Tai Po,Sai Kung,27,9,0.5,Bus
+Tsim Sha Tsui,Central,10,6,0.6,Bus
+Tsim Sha Tsui,Wan Chai,12,6,0.7,MTR
+Central,Admiralty,5,0,0.7,Walk
+Admiralty,Wan Chai,6,0,0.7,Walk
+Wan Chai,Causeway Bay,6,4.5,0.8,MTR
