@@ -1,10 +1,13 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
 from Modules.Core import *
 from Modules.PathManager import *
 
 from GraphManager import InputNumber
 
 import random
-import fibheap
+import heapq
 import math
 
 def GenerateGraph(numNodes: int, numEdges: int, avgOutDegree: int):
@@ -18,7 +21,7 @@ def GenerateGraph(numNodes: int, numEdges: int, avgOutDegree: int):
         graph.graph[i] = set()  # in case of empty graph, the source node is included
     if (numEdges == 0) or (numNodes == 1): return graph
 
-    nodeHeap = fibheap.makefheap()
+    nodeHeap = []
     activeNodes = [i for i in range(numNodes)]
     __valMax = max(EPSILON, 1e4 / numEdges)
 
@@ -29,13 +32,13 @@ def GenerateGraph(numNodes: int, numEdges: int, avgOutDegree: int):
 
     for i in range(numNodes):
         # introduce a random number (first one) as weighted priority
-        fibheap.fheappush(nodeHeap, (__Eval(0), 0, i))
+        heapq.heappush(nodeHeap, (__Eval(0), 0, i))
 
     edgesAdded = 0
     tmpAdjList = [set() for i in range(numNodes)]
 
-    while nodeHeap.num_nodes and edgesAdded < numEdges:
-        _, deg, source = fibheap.fheappop(nodeHeap)
+    while nodeHeap and edgesAdded < numEdges:
+        _, deg, source = heapq.heappop(nodeHeap)
 
         # if this source node reaches out degre limit:
         # do not add back the node
@@ -51,7 +54,7 @@ def GenerateGraph(numNodes: int, numEdges: int, avgOutDegree: int):
         edgesAdded += 1
         deg += 1
         # after successful graph addition, push source back into the heap
-        fibheap.fheappush(nodeHeap, (__Eval(deg), deg, source))
+        heapq.heappush(nodeHeap, (__Eval(deg), deg, source))
 
     for source in range(numNodes):
         for to in tmpAdjList[source]:

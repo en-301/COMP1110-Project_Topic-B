@@ -1,3 +1,6 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
 from Modules.Core import *
 from Modules.PathManager import *
 
@@ -33,7 +36,7 @@ if __name__ == "__main__":
     if fileName == None:
         exit()
     print()
-    graph = ReadGraph(fileName=fileName)
+    graph = ReadGraph(pathDir=path, fileName=fileName)
     if graph == None:
         exit()
 

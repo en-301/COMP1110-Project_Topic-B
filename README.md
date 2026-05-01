@@ -6,22 +6,11 @@ This project runs in Python 3.13.11.
 
 ## To Run the Program
 
-Navigate to the root folder. Then, in terminal, run
+Navigate to the project root folder. Then, in terminal, run
 ```sh
-python -m pip install -r requirements.txt
+python3 GraphManager.py
 ```
-and then
-```sh
-python GraphManager.py
-```
-Alternatively, run
-```sh
-python -m pip install fibheap~=0.2.1
-```
-and then
-```sh
-python GraphManager.py
-```
+On Windows, replace `python3` with `python`.
 
 ## File Structure
 ```
@@ -59,3 +48,17 @@ Refer to  `.Data/TestSimple.csv` for example reference.
 Each point of interest can have any name made of letters, numbers, spaces, dashes, and underscores.
 
 Each point of interest can only have one path directed towards itself.
+
+## Testing
+
+The tester programs for the accuracy and efficiency of the main module is located under `./Tests/`.
+
+To test accuracy, run
+```sh
+python3 Tests/TestAccuracy.py
+```
+To test efficiency, Run
+```sh
+python3 Tests/TestEfficiency.py
+```
+On Windows, replace `python3` with `python`.
