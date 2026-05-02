@@ -1,6 +1,6 @@
 # COMP1110 Project (Topic B)
 
-The project repository that implements the smart public transport navigation program of group D16, written fully in Python.
+The project repository that implements the smart public transport navigation program of group D19, written fully in Python.
 
 This project runs in Python 3.13.11.
 
